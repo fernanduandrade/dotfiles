@@ -39,9 +39,18 @@
   (package-refresh-contents)
   (package-install 'use-package))
 
+;; Trocar de tela com ctrl + tab
+(global-set-key (kbd "C-<tab>") 'other-window)
+
 ;; Org mode configuration
 (require 'org)
 (setq inhibit-splash-screen t)
+
+;; Doom mode Line para icones bonitos 
+(use-package doom-modeline
+    :ensure t
+    :init (doom-modeline-mode 1)    
+)
 
 ;; Habilitar modo transcedente do mark mode
 (transient-mark-mode 1)
@@ -49,6 +58,17 @@
 (setq org-todo-keywords
   '((sequence "TODO" "IN-PROGRESS" "WAITING" "DONE")))
 
+(use-package beacon
+    :ensure t 
+    :config
+    (beacon-mode 1)
+)
+
+;;lsp-ui config
+(setq lsp-headerline-breadcrumb-enable nil)
+(setq lsp-lens-enable 1)
+(setq lsp-ui-sideline-enable nil)
+(setq lsp-ui-doc-show-with-mouse nil)
 
 ;; Web mode 
 (use-package web-mode
@@ -75,23 +95,6 @@
 (setq-default indent-tabs-mode nil)
 (setq web-mode-code-indent-offset 4)
 (setq web-mode-indent-style 4)
-
-
-;; Neo-tree e all-icons || treemacs
-(global-set-key (kbd "C-<tab>") 'other-window)
-
-;; Icons para o Neo-tree
-(use-package all-the-icons
-  :ensure t)
-
-;; Neo-tree configuração
-(use-package neotree
-  :ensure t
-  :config
-  (progn
-    (setq neo-theme (if (display-graphic-p) 'icons 'arrow)))
-  :bind (("C-\\" . 'neotree-toggle)))
-(setq-default neo-show-hidden-files t)
 
 
 ;; Adicionar sintaxe highlight para Python
@@ -130,6 +133,10 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(custom-enabled-themes (quote (spacemacs-light)))
+ '(custom-safe-themes
+   (quote
+    ("fa2b58bb98b62c3b8cf3b6f02f058ef7827a8e497125de0254f56e373abee088" "bffa9739ce0752a37d9b1eee78fc00ba159748f50dc328af4be661484848e476" default)))
  '(package-selected-packages
    (quote
     (lsp-jedi jedi htmlize lsp-ui omnisharp lsp-mode yasnippet helm-lsp projectile hydra flycheck company avy which-key helm-xref dap-mode spacemacs-theme json-mode))))
