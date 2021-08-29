@@ -65,7 +65,6 @@
 )
 
 ;;lsp-ui config
-(setq lsp-headerline-breadcrumb-enable nil)
 (setq lsp-lens-enable 1)
 (setq lsp-ui-sideline-enable nil)
 (setq lsp-ui-doc-show-with-mouse nil)
