@@ -16,6 +16,4 @@ Um pequeno tutorial para mim mesmo não esquecer do que é necessário.
 <b>Js/Ts</b> \
 [Vue2 Server](https://emacs-lsp.github.io/lsp-mode/page/lsp-vetur/)
 \
-\
-
 Por enquanto é isso 
