@@ -213,3 +213,8 @@
   :ensure t)
 (add-hook 'sgml-mode-hook 'emmet-mode) ;; emmet para html
 (add-hook 'css-mode-hook  'emmet-mode) ;; emmet para css
+
+(use-package rainbow-delimiters
+  :ensure t)
+(add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
+(add-hook 'prog-mode-hook #'electric-pair-mode t)
