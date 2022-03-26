@@ -12,7 +12,10 @@ Um pequeno tutorial para mim mesmo não esquecer do que é necessário.
 [Web-Mode](https://github.com/emacs-csharp/csharp-mode),
 [Omnisharp](http://www.omnisharp.net/)
 \
-\<b>Js/Ts</b> \
+\
+<b>Js/Ts</b> \
 [Vue2 Server](https://emacs-lsp.github.io/lsp-mode/page/lsp-vetur/)
+\
+\
 
 Por enquanto é isso 
