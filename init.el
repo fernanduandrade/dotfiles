@@ -204,6 +204,9 @@
 (require 'helm-xref)
 (require 'eglot)
 
+;; habilitando yas-minor-mode para poder ter auto complete de funções não importadas.
+(add-hook 'prog-mode-hook #'yas-minor-mode)
+
 ;; Vue configuração
 (define-derived-mode genehack-vue-mode web-mode "ghVue"
   "A major mode derived from web-mode, for editing .vue files with LSP support.")
