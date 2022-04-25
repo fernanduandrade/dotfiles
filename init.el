@@ -196,13 +196,14 @@
 (add-hook 'python-mode-hook 'jedi:setup)
 (setq jedi:complete-on-dot t)
 
-(setq package-selected-packages '(eglot yasnippet helm-lsp projectile hydra flycheck avy helm-xref))
+(setq package-selected-packages '(eglot cider yasnippet helm-lsp projectile hydra flycheck avy helm-xref))
 (when (cl-find-if-not #'package-installed-p package-selected-packages)
   (package-refresh-contents)
   (mapc #'package-install package-selected-packages))
 (helm-mode 1)
 (require 'helm-xref)
 (require 'eglot)
+(require 'cider)
 
 ;; habilitando yas-minor-mode para poder ter auto complete de funções não importadas.
 (add-hook 'prog-mode-hook #'yas-minor-mode)
