@@ -47,10 +47,6 @@
 (require 'project)
 (global-set-key (kbd "C-x p f") #'project-find-file)
 
-;; Built-in project package
-(require 'project)
-(global-set-key (kbd "C-x p f") #'project-find-file)
-
 
 ;; General settings
 (delete-selection-mode t)
@@ -115,9 +111,9 @@
 	 ("C-x g" . magit-status)))
 
 
-(defun efs/lsp-mode-setup ()
-  (setq lsp-headerline-breadcrumb-segments '(path-up-to-project file symbols))
-  (lsp-headerline-breadcrumb-mode))
+;; (defun efs/lsp-mode-setup ()
+;;   (setq lsp-headerline-breadcrumb-segments '(path-up-to-project file symbols))
+;;   (lsp-headerline-breadcrumb-mode))
 
 ;; lsp-mode
 (setq lsp-log-io nil) ;; Don't log everything = speed
@@ -176,10 +172,6 @@
 (setq org-todo-keywords
   '((sequence "TODO" "IN-PROGRESS" "WAITING" "DONE")))
 
-(use-package beacon
-    :ensure t 
-    :config
-    (beacon-mode 1))
 
 ;; Adicionar sintaxe highlight para Csharp e dotnet support
 (use-package dotnet
@@ -196,14 +188,13 @@
 (add-hook 'python-mode-hook 'jedi:setup)
 (setq jedi:complete-on-dot t)
 
-(setq package-selected-packages '(eglot cider yasnippet helm-lsp projectile hydra flycheck avy helm-xref))
+(setq package-selected-packages '(eglot yasnippet helm-lsp projectile hydra flycheck avy helm-xref))
 (when (cl-find-if-not #'package-installed-p package-selected-packages)
   (package-refresh-contents)
   (mapc #'package-install package-selected-packages))
 (helm-mode 1)
 (require 'helm-xref)
 (require 'eglot)
-(require 'cider)
 
 ;; habilitando yas-minor-mode para poder ter auto complete de funções não importadas.
 (add-hook 'prog-mode-hook #'yas-minor-mode)
