@@ -197,7 +197,7 @@ bindsym $mod+v exec --no-startup-id clipmenu
 #gaps outer 2
 
 # Gaps internos (entre janelas)
-#gaps inner 2
+gaps inner 6
 
 #removendo a barra superior de todos os apps abertos
 for_window [window_type="normal"] border pixel 0
