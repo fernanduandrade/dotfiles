@@ -201,3 +201,6 @@ gaps inner 6
 
 #removendo a barra superior de todos os apps abertos
 for_window [window_type="normal"] border pixel 0
+
+bindsym $mod+Shift+m exec --no-startup-id xrandr --output eDP-1 --off --output HDMI-1 --auto
+bindsym $mod+Shift+l exec --no-startup-id xrandr --output HDMI-1 --off --output eDP-1 --auto
